@@ -61,4 +61,3 @@ jobs:
 # 给清单打上多个标签
           tags: |
             registry.cn-hangzhou.aliyuncs.com/betterfor/dockerimages:mimideb-${{ steps.date.outputs.today }}
-            #accent0/mimideb:${{ steps.date.outputs.today }}
