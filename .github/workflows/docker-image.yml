@@ -45,6 +45,7 @@ jobs:
         name: Login to DockerHub
         uses: docker/login-action@v1
         with:
+          registry: registry.cn-hangzhou.aliyuncs.com
           username: ${{ secrets.ALIYUN_USER }}
           password: ${{ secrets.ALIYUN_TOKEN }}
       -
