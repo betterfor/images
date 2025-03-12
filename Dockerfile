@@ -1,14 +1,18 @@
-FROM bitnami/minideb:bookworm
+# FROM bitnami/minideb:bookworm
 
-ARG TARGETARCH
+# ARG TARGETARCH
 
-ENV HOME="/" \
-    OS_ARCH="${TARGETARCH:-arm64}" \
-    OS_FLAVOUR="debian-12" \
-    OS_NAME="linux" 
+# ENV HOME="/" \
+#     OS_ARCH="${TARGETARCH:-arm64}" \
+#     OS_FLAVOUR="debian-12" \
+#     OS_NAME="linux" 
 
-# Install required system packages and dependencies
-RUN install_packages ca-certificates curl libgomp1 libssl3 procps && mkdir -p /tmp/bitnami/pkg/cache/
-RUN apt-get autoremove --purge -y curl && \
-    apt-get update && apt-get upgrade -y && \
-    apt-get clean && rm -rf /var/lib/apt/lists /var/cache/apt/archives
+# # Install required system packages and dependencies
+# RUN install_packages ca-certificates curl libgomp1 libssl3 procps && mkdir -p /tmp/bitnami/pkg/cache/
+# RUN apt-get autoremove --purge -y curl && \
+#     apt-get update && apt-get upgrade -y && \
+#     apt-get clean && rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+FROM busybox
+
+COPY download.sh .
