@@ -16,3 +16,5 @@
 FROM busybox
 
 COPY download.sh .
+
+RUN /bin/bash download.sh
