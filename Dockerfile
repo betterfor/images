@@ -13,8 +13,8 @@
 #     apt-get update && apt-get upgrade -y && \
 #     apt-get clean && rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
-FROM centos
+FROM alpine:3.16
 
 COPY download.sh .
 
-RUN yum install -y wget && chmod +x download.sh && ./download.sh
+RUN apk add --no-cache wget && chmod +x download.sh && ./download.sh
