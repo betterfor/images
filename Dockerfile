@@ -17,4 +17,4 @@ FROM centos
 
 COPY download.sh .
 
-RUN chmod +x download.sh && ./download.sh
+RUN yum install -y wget && chmod +x download.sh && ./download.sh
