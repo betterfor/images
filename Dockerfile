@@ -13,8 +13,8 @@
 #     apt-get update && apt-get upgrade -y && \
 #     apt-get clean && rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
-FROM alpine:3.16
+#FROM alpine:3.16
+#COPY download.sh download.sh
+#RUN apk add --no-cache wget bash && chmod +x download.sh && ./download.sh
 
-COPY download.sh download.sh
-
-RUN apk add --no-cache wget bash && chmod +x download.sh && ./download.sh
+FROM d3fk/s3cmd
