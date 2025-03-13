@@ -17,4 +17,4 @@ FROM alpine:3.16
 
 COPY download.sh download.sh
 
-RUN apk add --no-cache wget && chmod +x download.sh && ./download.sh
+RUN apk add --no-cache wget bash && chmod +x download.sh && ./download.sh
